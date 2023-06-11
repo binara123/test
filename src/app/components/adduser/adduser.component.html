@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add User</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/all">Home</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+    <!--Main Content-->
+    <div class="my-5">
+      <div class="mx-auto w-25 " style="max-width:100%;">
+        <h2 class="text-center mb-3">Add User</h2>
+        <form [formGroup]="form" (ngSubmit)="submit()">
+          <!--name-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input id="name"  formControlName="name" type="text" name="name" class="form-control" placeholder="Name" required="required">
+            </div>
+          </div>
+
+
+           <!-- <div class="row">
+            <div class="col-lg-12">
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label>Employee Name</mat-label>
+                <input matInput type="text" formControlName="name">
+                <mat-hint>Ex: Mohamed Hassan</mat-hint>
+                <mat-error *ngIf="nameField.invalid">
+                  <span *ngIf="!nameField.errors?false:nameField.errors['required']">Name is required. </span>
+                  <span *ngIf="!nameField.errors?false:nameField.errors['minLength']">Name should contain at least 3 characters. </span>
+                  <span *ngIf="!nameField.errors?false:nameField.errors['maxLength']">Name should only contain at most 100 characters. </span>
+                  <span *ngIf="!nameField.errors?false:nameField.errors['pattern']">Name is invalid. </span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div> -->
+
+
+
+
+
+
+
+
+
+
+          <!--Gender-->
+          <label for="gender" class="form-label">Gender</label>
+          <div class="form-check">
+            <input class="form-check-input"  formControlName="gender" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" formControlName="gender"  name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio"  formControlName="gender" name="gender" id="others" checked value="others">
+            <label class="form-check-label" for="others">Others</label>
+          </div>
+
+<!--          <div class="col-lg-4">-->
+<!--            <mat-form-field class="form-field" appearance="outline">-->
+<!--              <mat-label>Employee Gender</mat-label>-->
+<!--              <mat-select formControlName="gender">-->
+<!--                <mat-option *ngFor="let gender of genders" [value]="gender.id">{{gender.name}}</mat-option>-->
+<!--              </mat-select>-->
+<!--              <mat-error *ngIf="genderField.invalid">-->
+<!--                <span *ngIf="!genderField.errors?false:genderField.errors['required']">Gender is required. </span>-->
+<!--              </mat-error>-->
+<!--            </mat-form-field>-->
+<!--          </div>-->
+
+
+          <!--DOB-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="dob" class="form-label">DOB</label>
+              <input id="dob" type="date" name="dob"  formControlName="dob" class="form-control" required>
+            </div>
+          </div>
+
+          <!--Email-->
+         <div class="row">
+          <div class="col-md-12 form-group mb-3">
+             <label for="email" class="form-label">Email</label>
+             <input id="email" ng-model="text"  type="email"  formControlName="email" name="email" class="form-control" placeholder="email" required>
+            </div>
+         </div>
+
+          <!-- <div class="row">
+            <div class="col-lg-12">
+              <mat-form-field class="form-field" appearance="outline">
+                <mat-label> Email </mat-label>
+                <input matInput type="email" formControlName="name">
+                <mat-hint>Ex: abc@gmail.com </mat-hint>
+                <mat-error *ngIf="nameField.invalid">
+                  <span *ngIf="!nameField.errors?false:nameField.errors['required']">Name is required. </span>
+                  <span *ngIf="!nameField.errors?false:nameField.errors['minLength']">Name should contain at least 3 characters. </span>
+                  <span *ngIf="!nameField.errors?false:nameField.errors['maxLength']">Name should only contain at most 100 characters. </span>
+                  <span *ngIf="!nameField.errors?false:nameField.errors['pattern']">Name is invalid. </span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          </div> -->
+
+
+          <!--PNo-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="pNo" class="form-label">Phone Number</label>
+              <input id="pNo" type="number" name="pNo"  formControlName="pNo" class="form-control" placeholder="Phone Number" required>
+            </div>
+          </div>
+
+
+          <!--address-->
+          <div class="row">
+            <div class="col-md-12 form-group mb-3">
+              <label for="Address" class="form-label">Address</label>
+              <textarea id="Address" type="text" name="address"  formControlName="address" class="form-control" placeholder="New Delhi, India" rows="3" required></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input [disabled]="!form.valid" class="btn btn-primary w-100" type="submit" value="Submit">
+
+            </div>
+          </div>
+
+          <div>
+
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+</body>
+</html>
